@@ -251,7 +251,7 @@ func TestAttachWithInternalAndInternetFacing(t *testing.T) {
 
 func TestErrorGettingMetadata(t *testing.T) {
 	e, _, mockMetadata := setup()
-	mockMetadata.On("GetInstanceIdentityDocument").Return(ec2metadata.EC2InstanceIdentityDocument{}, fmt.Errorf("No metadata for you"))
+	mockMetadata.On("GetInstanceIdentityDocument").Return(ec2metadata.EC2InstanceIdentityDocument{}, fmt.Errorf("no metadata for you"))
 
 	err := e.Update(controller.IngressEntries{})
 
